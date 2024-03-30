@@ -18,8 +18,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems } from './listitems';
-import Chart from './chart';
-import Deposits from './deposits';
 import Orders from './orders';
 
 function Copyright(props) {

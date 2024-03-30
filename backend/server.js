@@ -1,10 +1,12 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3001;
+const cors = require("cors");
 
 const db = require("./models");
 
 app.use(express.json());
+app.use(cors());
 
 // Routers
 const userRouter = require('./routes/User')
@@ -16,6 +18,3 @@ db.sequelize.sync().then(() => {
   });
 });  
 
-app.get('/', (req, res) => {
-  res.send('Hello from Express!');
-});
