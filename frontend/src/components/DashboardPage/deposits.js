@@ -1,3 +1,6 @@
+
+// Code for current settings block on dashboard
+
 /*
 import * as React from 'react';
 import Link from '@mui/material/Link';
@@ -36,6 +39,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import Title from './title.js';
 
 function createData(
   name: string,
@@ -59,6 +63,8 @@ const rows = [
 
 export default function DenseTable() {
   return (
+    <React.Fragment>
+      <Title>Current settings for (patient name).</Title>
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
         <TableHead>
@@ -87,5 +93,7 @@ export default function DenseTable() {
         </TableBody>
       </Table>
     </TableContainer>
+
+    </React.Fragment>
   );
 }

@@ -1,4 +1,6 @@
 
+// Code for 'Welcome/Hello' block on dashboard 
+
 //import * as React from 'react';
 import React, { useState } from 'react';
 //import { useTheme } from '@mui/material/styles';
@@ -31,8 +33,7 @@ export default function Chart() {
     <React.Fragment>
       <Title>Hello (patient name).</Title>
       <div style={{ width: '100%', flexGrow: 1, overflow: 'hidden' }}>
-      <h1>Today is: </h1><p>{currentDate}</p>
-      <p>{time.toLocaleTimeString()}</p>
+      <p>Today is: <p>{currentDate}</p> at {time.toLocaleTimeString()}</p>
       </div>
     </React.Fragment>
   );
