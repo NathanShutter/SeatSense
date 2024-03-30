@@ -34,26 +34,26 @@ function App() {
   }, []);
 
   return (
-    // <Router>
-    //   <Routes>
-    //     <Route path="/" element={<SignInSide onLogin={handleLogin} />} />
-    //     <Route path="/dashboard" element={<Dashboard />} />
-    //     <Route path="/signup" element={<SignUp />} />
-    //   </Routes>
-    // </Router>
-    <div className="App">
-      {listOfUsers.map((value, key) => {
-        return (
-          <div className="user">
-            <div className="userName"> {value.name}</div>
-            <div className="email"> {value.email}</div>
-            <div className="password"> {value.password}</div>
-          </div>
-        )
-      })
+    <Router>
+      <Routes>
+        <Route path="/" element={<SignInSide onLogin={handleLogin} />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/signup" element={<SignUp />} />
+      </Routes>
+    </Router>
+    // <div className="App">
+    //   {listOfUsers.map((value, key) => {
+    //     return (
+    //       <div className="user">
+    //         <div className="userName"> {value.name}</div>
+    //         <div className="email"> {value.email}</div>
+    //         <div className="password"> {value.password}</div>
+    //       </div>
+    //     )
+    //   })
 
-      }
-    </div>
+    //   }
+    // </div>
   );
 }
 
