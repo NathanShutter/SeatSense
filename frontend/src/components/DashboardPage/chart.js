@@ -5,6 +5,7 @@ import { LineChart, axisClasses } from '@mui/x-charts';
 
 import Title from './title.js';
 
+
 // Generate Sales Data
 function createData(time, amount) {
   return { time, amount: amount ?? null };
@@ -76,3 +77,4 @@ export default function Chart() {
     </React.Fragment>
   );
 }
+
