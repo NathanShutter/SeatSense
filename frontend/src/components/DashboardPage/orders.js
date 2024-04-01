@@ -18,12 +18,13 @@ export default function Orders() {
 
   return (
     <React.Fragment>
-      <Title>Recent Orders</Title>
+      <Title>Users in local MySQL Server</Title>
       <Table size="small">
         <TableHead>
           <TableRow>
             <TableCell>User ID</TableCell>
-            <TableCell>Name</TableCell>
+            <TableCell>First Name</TableCell>
+            <TableCell>Last Name</TableCell>
             <TableCell>Email</TableCell>
             <TableCell>Password</TableCell>
           </TableRow>
@@ -32,7 +33,8 @@ export default function Orders() {
           {listOfUsers.map((user) => (
             <TableRow key={user.id}>
               <TableCell>{user.userId}</TableCell>
-              <TableCell>{user.name}</TableCell>
+              <TableCell>{user.firstName}</TableCell>
+              <TableCell>{user.lastName}</TableCell>
               <TableCell>{user.email}</TableCell>
               <TableCell>{user.password}</TableCell>
             </TableRow>
