@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { useState } from 'react';
+import axios from 'axios';
+import { useNavigate, Link as RouterLink } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -11,6 +13,7 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Alert from '@mui/material/Alert';
 
 function Copyright(props) {
     return (
@@ -30,12 +33,22 @@ const defaultTheme = createTheme();
 function SignInSide({ onLogin }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState(null); // State to hold error message
+    const navigate = useNavigate();
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        onLogin(email, password);
+        try {
+            const response = await axios.post('http://localhost:3001/login', { email, password });
+            const token = response.data.token;
+            localStorage.setItem('token', token);
+            console.log("successful login");
+            navigate('/dashboard');
+        } catch (error) {
+            console.error('Login failed:', error.message);
+            setError('Invalid email or password'); // Set error message
+        }
     };
-
     return (
         <ThemeProvider theme={defaultTheme}>
             <Grid container component="main" sx={{ height: '100vh' }}>
@@ -95,6 +108,11 @@ function SignInSide({ onLogin }) {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                             />
+                            {error && (
+                                <Alert severity="error" sx={{ mt: 2 }}>
+                                    {error}
+                                </Alert>
+                            )}
                             <Button
                                 type="submit"
                                 fullWidth
@@ -105,13 +123,13 @@ function SignInSide({ onLogin }) {
                             </Button>
                             <Grid container>
                                 <Grid item xs>
-                                    <Link href="#" variant="body2">
+                                    <Link href="/signup" variant="body2">
                                         Forgot password?
                                     </Link>
                                 </Grid>
                                 <Grid item>
-                                    <Link href="#" variant="body2">
-                                        {"Don't have an account? Sign Up"}
+                                    <Link href="/signup" variant="body2">
+                                        Don't have an account? Sign Up
                                     </Link>
                                 </Grid>
                             </Grid>

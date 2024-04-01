@@ -1,8 +1,6 @@
 const login = async (email, password) => {
     try {
-        // Perform authentication logic here...
-        // For example, make an API call to validate the user's credentials
-        const response = await fetch('/api/login', {
+        const response = await fetch('http://localhost:3001/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
