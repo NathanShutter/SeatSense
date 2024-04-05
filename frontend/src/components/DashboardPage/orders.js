@@ -8,17 +8,27 @@ import TableRow from '@mui/material/TableRow';
 import Title from './title.js';
 
 export default function Orders() {
-  const [listOfUsers, setListOfUsers] = useState([]);
+  const [userData, setUserData] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/User").then((response) => {
-      setListOfUsers(response.data);
-    });
+    const token = sessionStorage.getItem('token'); // Retrieve JWT Token for authentication
+    const userId = sessionStorage.getItem('userId'); // Retrieve user ID from session storage
+    if (token && userId) {
+      axios.get(`http://localhost:3001/User/${userId}`).then((response) => {
+        setUserData(response.data);
+      }).catch((error) => {
+        console.error('Error fetching user data:', error);
+      });
+    }
   }, []);
+
+  if (!userData) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <React.Fragment>
-      <Title>Users in local MySQL Server</Title>
+      <Title>Welcome, {userData.firstName} {userData.lastName}</Title>
       <Table size="small">
         <TableHead>
           <TableRow>
@@ -26,19 +36,15 @@ export default function Orders() {
             <TableCell>First Name</TableCell>
             <TableCell>Last Name</TableCell>
             <TableCell>Email</TableCell>
-            <TableCell>Password</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {listOfUsers.map((user) => (
-            <TableRow key={user.id}>
-              <TableCell>{user.userId}</TableCell>
-              <TableCell>{user.firstName}</TableCell>
-              <TableCell>{user.lastName}</TableCell>
-              <TableCell>{user.email}</TableCell>
-              <TableCell>{user.password}</TableCell>
-            </TableRow>
-          ))}
+          <TableRow>
+            <TableCell>{userData.userId}</TableCell>
+            <TableCell>{userData.firstName}</TableCell>
+            <TableCell>{userData.lastName}</TableCell>
+            <TableCell>{userData.email}</TableCell>
+          </TableRow>
         </TableBody>
       </Table>
     </React.Fragment>

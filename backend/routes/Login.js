@@ -1,8 +1,10 @@
+// Login.js (routes/Login.js)
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { User } = require('../models');
+const { secretKey } = require('../config/secrets');
 
 // Route to handle user login authentication
 router.post('/', async (req, res) => {
@@ -17,21 +19,20 @@ router.post('/', async (req, res) => {
     }
 
     // Compare provided password with stored password hash
-    // const isValidPassword = await bcrypt.compare(password, user.password);
-    // if (!isValidPassword) {
-    //   return res.status(401).json({ error: 'Invalid email or password' });
-    // }
+    const isValidPassword = await bcrypt.compare(password, user.password);
+    if (!isValidPassword) {
+      return res.status(401).json({ error: 'Invalid email or password' });
+    }
 
-    // Generate JWT token
-    const token = jwt.sign({ userId: user.userId }, 'your_secret_key', { expiresIn: '1h' });
+    // Generate JWT token using the secret key
+    const token = jwt.sign({ userId: user.userId }, secretKey, { expiresIn: '1h' });
 
-    // Send token back to client
-    res.json({ token });
+    // Send token back to client along with user ID
+    res.json({ token, userId: user.userId });
   } catch (error) {
     console.error('Error during login:', error.message);
     res.status(500).json({ error: 'Internal server error' });
   }
 });
-
 
 module.exports = router;

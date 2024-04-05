@@ -12,13 +12,15 @@ app.use(cors());
 const userRouter = require('./routes/User');
 const loginRouter = require('./routes/Login');
 const signUpRouter = require('./routes/Signup');
+const dashboardRouter = require('./routes/auth/dashboard');
+
 app.use("/user", userRouter);
 app.use("/login", loginRouter);
 app.use("/signup", signUpRouter);
+app.use("/dashboard", dashboardRouter);
 
 db.sequelize.sync().then(() => {
   app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
   });
 });  
 

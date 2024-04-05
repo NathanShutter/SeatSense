@@ -13,7 +13,8 @@ const login = async (email, password) => {
         }
 
         const data = await response.json();
-        localStorage.setItem('token', data.token); // Store token in local storage
+        sessionStorage.setItem('token', data.token); // Store token in session storage
+        sessionStorage.setItem('userId', data.userId); // Store userId in session storage
         return data.token;
     } catch (error) {
         console.error('Error:', error.message);
@@ -23,12 +24,12 @@ const login = async (email, password) => {
 
 // Function to handle user logout
 const logout = () => {
-    localStorage.removeItem('token'); // Remove token from local storage
+    sessionStorage.removeItem('token'); // Remove token from session storage
 };
 
 // Function to check if the user is authenticated
 const isAuthenticated = () => {
-    return localStorage.getItem('token') !== null; // Check if token exists
+    return sessionStorage.getItem('token') !== null; // Check if token exists
 };
 
 // Export the functions for use in other files

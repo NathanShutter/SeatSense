@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
-import axios from 'axios';
-import { useNavigate, Link as RouterLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -14,23 +13,9 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Alert from '@mui/material/Alert';
+import * as auth from '../../auth/auth'; 
 
-function Copyright(props) {
-    return (
-        <Typography variant="body2" color="text.secondary" align="center" {...props}>
-            {'Copyright © '}
-            <Link color="inherit" href="https://mui.com/">
-                Your Website
-            </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-        </Typography>
-    );
-}
-
-const defaultTheme = createTheme();
-
-function SignInSide({ onLogin }) {
+function SignInSide() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null); // State to hold error message
@@ -39,9 +24,7 @@ function SignInSide({ onLogin }) {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.post('http://localhost:3001/login', { email, password });
-            const token = response.data.token;
-            localStorage.setItem('token', token);
+            await auth.login(email, password); // Use the login function
             console.log("successful login");
             navigate('/dashboard');
         } catch (error) {
@@ -49,8 +32,9 @@ function SignInSide({ onLogin }) {
             setError('Invalid email or password'); // Set error message
         }
     };
+
     return (
-        <ThemeProvider theme={defaultTheme}>
+        <ThemeProvider theme={createTheme()}>
             <Grid container component="main" sx={{ height: '100vh' }}>
                 <CssBaseline />
                 <Grid
@@ -133,7 +117,6 @@ function SignInSide({ onLogin }) {
                                     </Link>
                                 </Grid>
                             </Grid>
-                            <Copyright sx={{ mt: 5 }} />
                         </Box>
                     </Box>
                 </Grid>

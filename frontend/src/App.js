@@ -25,14 +25,6 @@ function App() {
     }
   };
 
-  const [listOfUsers, setListOfUsers] = useState([]);
-
-  useEffect(() => {
-    axios.get("http://localhost:3001/User").then((response) => {
-      setListOfUsers(response.data);
-    });
-  }, []);
-
   return (
     <Router>
       <Routes>
@@ -41,19 +33,6 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
       </Routes>
     </Router>
-    // <div className="App">
-    //   {listOfUsers.map((value, key) => {
-    //     return (
-    //       <div className="user">
-    //         <div className="userName"> {value.name}</div>
-    //         <div className="email"> {value.email}</div>
-    //         <div className="password"> {value.password}</div>
-    //       </div>
-    //     )
-    //   })
-
-    //   }
-    // </div>
   );
 }
 
