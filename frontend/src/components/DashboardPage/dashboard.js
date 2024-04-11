@@ -17,7 +17,7 @@ import Paper from '@mui/material/Paper';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { mainListItems } from './listitems';
+import MainListItems from './listitems';
 import Orders from './orders';
 import { Navigate } from 'react-router-dom';
 import LogoutDialog from './LogoutDialog';
@@ -145,7 +145,7 @@ export default function Dashboard() {
           </Toolbar>
           <Divider />
           <List component="nav">
-            {mainListItems}
+            <MainListItems />
           </List>
         </Drawer>
         {isLoggedIn ? (

@@ -6,8 +6,7 @@ const auth = require('./auth');
 router.get('/', auth, (req, res) => {
     // Access user information from req.user
     const userId = req.user.userId;
-    // Debug
-    console.log('UserId: ', userId);
+    
     // Return dashboard data
     res.json({ message: `Dashboard for user ${userId}` });
 });

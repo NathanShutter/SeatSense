@@ -7,7 +7,7 @@ const { User } = require('../models');
 router.post('/', async (req, res) => {
     try {
         // Extract user data from request body
-        const { firstName, lastName, email, password } = req.body;
+        const { firstName, lastName, email, phone, password } = req.body;
 
         // Check if user with the same email already exists
         const existingUser = await User.findOne({ where: { email } });
@@ -23,10 +23,11 @@ router.post('/', async (req, res) => {
             firstName,
             lastName,
             email,
+            phone,
             password: hashedPassword,
+            role: 'healthcare_professional',
         });
 
-        // Optionally, generate JWT token for the newly signed up user
 
         res.status(201).json({ message: 'User created successfully', user: newUser });
     } catch (error) {

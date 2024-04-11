@@ -13,11 +13,18 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Alert from '@mui/material/Alert';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { MuiTelInput } from 'mui-tel-input'
 
 const defaultTheme = createTheme();
 
 export default function SignUp() {
   const [alert, setAlert] = useState({ type: '', message: '' });
+
+  const [phone, setPhone] = React.useState('')
+
+  const handleChange = (newPhone) => {
+    setPhone(newPhone)
+  }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -25,6 +32,7 @@ export default function SignUp() {
       const response = await axios.post('http://localhost:3001/signup', {
         firstName: event.target.firstName.value,
         lastName: event.target.lastName.value,
+        phone: event.target.phone.value,
         email: event.target.email.value,
         password: event.target.password.value,
       });
@@ -83,6 +91,18 @@ export default function SignUp() {
                   label="Last Name"
                   name="lastName"
                   autoComplete="family-name"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <MuiTelInput
+                  required
+                  fullWidth
+                  id="phone"
+                  label="Phone Number"
+                  name='phone'
+                  value={phone}
+                  onChange={handleChange}
+                  defaultCountry="US"
                 />
               </Grid>
               <Grid item xs={12}>

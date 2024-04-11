@@ -13,7 +13,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Alert from '@mui/material/Alert';
-import * as auth from '../../auth/auth'; 
+import * as auth from '../../auth/auth';
 
 function SignInSide() {
     const [email, setEmail] = useState('');
@@ -93,7 +93,7 @@ function SignInSide() {
                                 onChange={(e) => setPassword(e.target.value)}
                             />
                             {error && (
-                                <Alert severity="error" sx={{ mt: 2 }}>
+                                <Alert severity="error" sx={{ width: "100%", mt: 2 }}>
                                     {error}
                                 </Alert>
                             )}

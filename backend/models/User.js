@@ -21,8 +21,25 @@ module.exports = (sequelize, DataTypes) => {
         password: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        phone: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        role: {
+            type: DataTypes.ENUM('root', 'healthcare_professional'),
+            allowNull: false,
+            defaultValue: 'healthcare_professional'
         }
     });
 
+    User.associate = (models) => {
+        User.hasOne(models.Client, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
+
     return User;
-}
+};
