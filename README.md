@@ -1,7 +1,6 @@
 ![Logo](https://github.com/NathanShutter/SeatSense/assets/44408112/7fa96d9b-9b2f-48df-b877-20060db59c14)
 # SeatSense 
 
-
 # Contents
 1. [Introduction](#introduction)
 2. [Diagrams](#diagrams)
