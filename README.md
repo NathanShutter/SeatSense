@@ -6,6 +6,10 @@
 2. [Diagrams](#diagrams)
     - [Context Diagram](#context)
     - [Use Case Diagram](#useCase)
+    - [Wireframe Document](#wireframe)
+3. [Components List](#components)
+4. [Deploy Scripts](#scripts)
+5. [URLs/Domain Hosting](#domain)
 3. [Installation](#install)
 
 ## Introduction <a name="introduction"></a>
@@ -20,6 +24,20 @@ Introduction text here.
 
 ### Use Case <a name="useCase"></a>
 ![SeatSense - Use Case Diagram](https://github.com/NathanShutter/SeatSense/assets/44408112/e673c087-d1df-4fe5-9117-6ed9672b5970)
+<br>
+[User Stories](https://docs.google.com/document/d/11HFlz7UyTxVYJmE6q1iyrR8V4ipBEa2ipqIvEYcrsHQ/edit?usp=drive_link)
+
+### Wireframe <a name="wireframe"></a>
+[Wireframe](https://docs.google.com/document/d/1z0uEi7CwZw6xhUmhtxexyhhBEGdNLQePkJ5ze49SKhE/edit?usp=drive_link)
+
+## Components List <a name="components"></a>
+[Components](https://docs.google.com/spreadsheets/d/1qV1WKEFyU27Uk_XOlJQLWVyRiMQ0DUOngXsA47FOCYI/edit?usp=drive_link)
+
+## Deploy Scripts <a name="scripts"></a>
+Scripts go here.
+
+## URLs/Domain Hosting <a name="domain"></a>
+URL goes here.
 
 ## Installation <a name="install"></a>
 Introduction text here.
