@@ -39,6 +39,11 @@ module.exports = (sequelize, DataTypes) => {
                 allowNull: false
             }
         });
+        User.hasOne(models.ResetRequest, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
     };
 
     return User;

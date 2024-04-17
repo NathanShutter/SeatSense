@@ -4,9 +4,11 @@ const app = express();
 const port = process.env.PORT || 3001;
 const cors = require("cors");
 const db = require("./models");
+const path = require('path');
 
 app.use(express.json());
 app.use(cors());
+app.use(express.static(path.join(__dirname, '../frontend/build')));
 
 // Routers
 const userRouter = require('./routes/User');
@@ -15,6 +17,8 @@ const signUpRouter = require('./routes/Signup');
 const dashboardRouter = require('./routes/auth/dashboard');
 const clientRouter = require('./routes/Client');
 const profileRouter = require('./routes/Profile');
+const passwordRouter = require('./routes/PasswordReset');
+const phoneRouter = require('./routes/PhoneCall');
 
 app.use("/user", userRouter);
 app.use("/login", loginRouter);
@@ -22,6 +26,8 @@ app.use("/signup", signUpRouter);
 app.use("/dashboard", dashboardRouter);
 app.use("/client", clientRouter);
 app.use("/profile", profileRouter);
+app.use("/password-reset", passwordRouter);
+app.use("/phone-call", phoneRouter);
 
 async function createRootUser() {
   try {

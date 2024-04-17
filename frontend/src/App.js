@@ -8,6 +8,7 @@ import SignInSide from './components/LoginPage/login';
 import Client from './components/ClientPage/client';
 import Notification from "./components/NotificationsPage/notifications.js";
 import Profile from "./components/ProfilePage/profile.js";
+import PasswordReset from "./components/PasswordPage/passwordReset.js";
 import { login } from './auth/auth.js';
 
 function App() {
@@ -26,8 +27,9 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<SignInSide onLogin={handleLogin} />} />
-        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/password-reset" element={<PasswordReset />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/client" element={<Client />} />
         <Route path="/notification" element={<Notification />} />
         <Route path="/profile" element={<Profile />} />
