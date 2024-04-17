@@ -13,7 +13,7 @@
 3. [Installation](#install)
 
 ## Introduction <a name="introduction"></a>
-Introduction text here.
+Introduction text here. 
 
 ## Diagrams <a name="diagrams"></a>
 
