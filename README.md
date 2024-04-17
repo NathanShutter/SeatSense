@@ -15,6 +15,7 @@ Introduction text here.
 
 ### Context Diagram <a name="context"></a>
 ![SeatSense - Context Diagram](https://github.com/NathanShutter/SeatSense/assets/44408112/8dd25e7d-40f6-44d0-b240-9d1f5d02b33f)
+[Context Diagram](https://docs.google.com/spreadsheets/d/1qV1WKEFyU27Uk_XOlJQLWVyRiMQ0DUOngXsA47FOCYI/edit?usp=drive_link)
 
 ### Use Case <a name="useCase"></a>
 ![SeatSense - Use Case Diagram](https://github.com/NathanShutter/SeatSense/assets/44408112/e673c087-d1df-4fe5-9117-6ed9672b5970)
