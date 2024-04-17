@@ -6,8 +6,6 @@ on:
   pull_request:
     branches: [main]
 
-    # change node version | matrix is outdated
-
 jobs:
   build:
     runs-on: self-hosted
