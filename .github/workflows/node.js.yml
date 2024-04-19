@@ -15,7 +15,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '21.7.3'
+          node-version: '18.20.2'
       
       # Build the backend
       - name: Build Backend
