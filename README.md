@@ -38,7 +38,7 @@ Introduction text here.
 Scripts go here.
 
 ## URLs/Domain Hosting <a name="domain"></a>
-URL goes here.
+[seatsense.sluhncauldron.org](http://seatsense.sluhncauldron.org)
 
 ## Installation <a name="install"></a>
 Introduction text here.
