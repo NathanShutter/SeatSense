@@ -22,10 +22,3 @@ jobs:
         run: |
           cd backend
           npm i
-
-      # Build the frontend
-      - name: Build Frontend
-        run: |
-          cd frontend
-          npm i
-          npm run build
