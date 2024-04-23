@@ -17,11 +17,17 @@ jobs:
         with:
           node-version: '18.20.2'
       
-      # Build the backend, remove node_moduels, restart pm2 and nginx services
-      - name: Build Backend
+      # Check if node_modules folder exists and remove it if it does
+      - name: Check if node_modules exists
+        run: |
+          if [ -d "backend/node_modules" ]; then
+            rm -rf backend/node_modules
+          fi
+      
+      # Install dependencies and restart services
+      - name: Install dependencies and restart services
         run: |
           cd backend
-          rm -r node_modules/
           npm i
           pm2 stop 0
           pm2 start 0
