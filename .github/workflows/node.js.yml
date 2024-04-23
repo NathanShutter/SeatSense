@@ -17,10 +17,11 @@ jobs:
         with:
           node-version: '18.20.2'
       
-      # Build the backend and restart services
+      # Build the backend, remove node_moduels, restart pm2 and nginx services
       - name: Build Backend
         run: |
           cd backend
+          rm -r /node_modules
           npm i
           pm2 stop 0
           pm2 start 0
