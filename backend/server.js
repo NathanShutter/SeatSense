@@ -20,6 +20,8 @@ const clientRouter = require('./routes/Client');
 const profileRouter = require('./routes/Profile');
 const passwordRouter = require('./routes/PasswordReset');
 const phoneRouter = require('./routes/PhoneCall');
+const signUpPageRoute = require('./routes/SignUpPage');
+const passwordResetPageRoute = require('./routes/PasswordResetPage');
 
 app.use("/user", userRouter);
 app.use("/login", loginRouter);
@@ -29,6 +31,8 @@ app.use("/client", clientRouter);
 app.use("/profile", profileRouter);
 app.use("/password-reset", passwordRouter);
 app.use("/phone-call", phoneRouter);
+app.use("/signup-page", signUpPageRoute);
+app.use("/password-reset-page", passwordResetPageRoute);
 
 async function createRootUser() {
   try {
