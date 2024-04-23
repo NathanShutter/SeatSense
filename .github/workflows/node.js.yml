@@ -17,8 +17,12 @@ jobs:
         with:
           node-version: '18.20.2'
       
-      # Build the backend
+      # Build the backend and restart services
       - name: Build Backend
         run: |
           cd backend
           npm i
+          pm2 stop 0
+          pm2 start 0
+          pm2 save
+          sudo service nginx restart

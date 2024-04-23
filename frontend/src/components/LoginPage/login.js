@@ -107,12 +107,12 @@ function SignInSide() {
                             </Button>
                             <Grid container>
                                 <Grid item xs>
-                                    <Link href="/password-reset" variant="body2">
+                                    <Link href="/password-reset-page" variant="body2">
                                         Forgot password?
                                     </Link>
                                 </Grid>
                                 <Grid item>
-                                    <Link href="/signup" variant="body2">
+                                    <Link href="/signup-page" variant="body2">
                                         Don't have an account? Sign Up
                                     </Link>
                                 </Grid>

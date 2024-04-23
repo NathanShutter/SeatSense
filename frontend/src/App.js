@@ -27,8 +27,8 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<SignInSide onLogin={handleLogin} />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/password-reset" element={<PasswordReset />} />
+        <Route path="/signup-page" element={<SignUp />} />
+        <Route path="/password-reset-page" element={<PasswordReset />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/client" element={<Client />} />
         <Route path="/notification" element={<Notification />} />

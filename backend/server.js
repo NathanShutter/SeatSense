@@ -9,13 +9,13 @@ const path = require('path');
 app.use(express.json());
 app.use(cors());
 
-// app.use(express.static(path.join(__dirname, '../frontend/build')));
+app.use(express.static(path.join(__dirname, '../frontend/build')));
 
 // Routers
 const userRouter = require('./routes/User');
 const loginRouter = require('./routes/Login');
 const signUpRouter = require('./routes/Signup');
-const dashboardRouter = require('./routes/auth/dashboard');
+const dashboardRouter = require('./routes/auth/Dashboard');
 const clientRouter = require('./routes/Client');
 const profileRouter = require('./routes/Profile');
 const passwordRouter = require('./routes/PasswordReset');
