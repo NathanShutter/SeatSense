@@ -16,8 +16,8 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import MainListItems from '../DashboardPage/listitems'; 
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import MainListItems from '../DashboardPage/listitems';
 import ProfileForm from './profileForm';
 import { Navigate } from 'react-router-dom';
 import LogoutDialog from '../DashboardPage/LogoutDialog';
@@ -124,8 +124,8 @@ export default function Dashboard() {
             </Typography>
             <Button variant="text" color="inherit" onClick={handleLogout}>Logout</Button>
             <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <NotificationsIcon />
+              <Badge color="secondary">
+                <AccountCircleIcon />
               </Badge>
             </IconButton>
           </Toolbar>
@@ -145,7 +145,7 @@ export default function Dashboard() {
           </Toolbar>
           <Divider />
           <List component="nav">
-            <MainListItems /> 
+            <MainListItems />
           </List>
         </Drawer>
         {isLoggedIn ? (
