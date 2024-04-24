@@ -15,10 +15,11 @@ export default function ProfileForm() {
 
     useEffect(() => {
         // Load user data from backend when component mounts
+        const backendUrl = process.env.REACT_APP_BACKEND_URL;
         const token = sessionStorage.getItem('token');
         const userId = sessionStorage.getItem('userId');
         if (token && userId) {
-            axios.get(`${process.env.REACT_APP_BACKEND_URL}/profile/${userId}`, {
+            axios.get(`${backendUrl}/profile/${userId}`, {
                 headers: {
                     Authorization: token
                 }

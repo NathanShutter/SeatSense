@@ -23,7 +23,7 @@ export default function PasswordReset() {
         event.preventDefault();
         try {
             const backendUrl = process.env.REACT_APP_BACKEND_URL;
-            const response = await axios.post('${backendUrl}/forgot-password/', {
+            const response = await axios.post(`${backendUrl}/forgot-password/`, {
                 email: event.target.email.value,
             });
             // Check if the response contains a success message
