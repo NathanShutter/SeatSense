@@ -29,7 +29,7 @@ export default function SignUp() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3001/signup', {
+      const response = await axios.post('https://seatsense.sluhncauldron.org/signup', {
         firstName: event.target.firstName.value,
         lastName: event.target.lastName.value,
         phone: event.target.phone.value,
