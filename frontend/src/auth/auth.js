@@ -1,6 +1,8 @@
 const login = async (email, password) => {
     try {
-        const response = await fetch('http://localhost:3001/login', {
+        const backendUrl = process.env.REACT_APP_BACKEND_URL; // Get the backend URL from environment variables
+
+        const response = await fetch(`${backendUrl}/login`, { // Use the backend URL in the fetch call
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -21,6 +23,7 @@ const login = async (email, password) => {
         throw error;
     }
 };
+
 
 // Function to handle user logout
 const logout = () => {
