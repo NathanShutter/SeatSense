@@ -16,11 +16,11 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import MainListItems from '../DashboardPage/listitems'; 
+import MainListItems from '../DashboardPage/listitems';
 import ClientInfo from './clientInfo';
 import { Navigate } from 'react-router-dom';
 import LogoutDialog from '../DashboardPage/LogoutDialog';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const drawerWidth = 240;
 
@@ -86,6 +86,7 @@ export default function Dashboard() {
     setDialogOpen(false);
   };
 
+
   // Fetch the JWT token from local storage
   const token = sessionStorage.getItem('token');
   // Determine if the user is authenticated based on the presence of the token
@@ -123,11 +124,13 @@ export default function Dashboard() {
               Client
             </Typography>
             <Button variant="text" color="inherit" onClick={handleLogout}>Logout</Button>
-            <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
+            <Link to="/profile" style={{ textDecoration: 'none' }}>
+              <IconButton color="inherit">
+                <Badge color="secondary">
+                  <AccountCircleIcon />
+                </Badge>
+              </IconButton>
+            </Link>
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open}>
@@ -145,7 +148,7 @@ export default function Dashboard() {
           </Toolbar>
           <Divider />
           <List component="nav">
-            <MainListItems /> 
+            <MainListItems />
           </List>
         </Drawer>
         {isLoggedIn ? (
