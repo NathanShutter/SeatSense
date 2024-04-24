@@ -11,10 +11,11 @@ export default function NotificationInfo() {
     const [notificationData, setNotificationData] = useState(null);
 
     useEffect(() => {
+        const backendUrl = process.env.REACT_APP_BACKEND_URL;
         const token = sessionStorage.getItem('token'); // Retrieve JWT Token for authentication
         const userId = sessionStorage.getItem('userId'); // Retrieve user ID from session storage
         if (token && userId) {
-            axios.get(`http://localhost:3001/client?userId=${userId}`).then((response) => {
+            axios.get(`${backendUrl}/client?userId=${userId}`).then((response) => {
                 setNotificationData(response.data);
             }).catch((error) => {
                 console.error('Error fetching client data:', error);

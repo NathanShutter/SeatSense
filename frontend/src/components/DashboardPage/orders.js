@@ -11,10 +11,11 @@ export default function Orders() {
   const [userData, setUserData] = useState(null);
 
   useEffect(() => {
+    const backendUrl = process.env.REACT_APP_BACKEND_URL;
     const token = sessionStorage.getItem('token'); // Retrieve JWT Token for authentication
     const userId = sessionStorage.getItem('userId'); // Retrieve user ID from session storage
     if (token && userId) {
-      axios.get(`http://localhost:3001/User/${userId}`).then((response) => {
+      axios.get(`${backendUrl}/User/${userId}`).then((response) => {
         setUserData(response.data);
       }).catch((error) => {
         console.error('Error fetching user data:', error);

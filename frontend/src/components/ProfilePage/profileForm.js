@@ -14,10 +14,15 @@ export default function ProfileForm() {
     });
 
     useEffect(() => {
-        const token = sessionStorage.getItem('token'); // Retrieve JWT Token for authentication
-        const userId = sessionStorage.getItem('userId'); // Retrieve user ID from session storage 
+        // Load user data from backend when component mounts
+        const token = sessionStorage.getItem('token');
+        const userId = sessionStorage.getItem('userId');
         if (token && userId) {
-            axios.get(`http://localhost:3001/profile/${userId}`).then((response) => {
+            axios.get(`${process.env.REACT_APP_BACKEND_URL}/profile/${userId}`, {
+                headers: {
+                    Authorization: token
+                }
+            }).then((response) => {
                 setUserData(response.data);
             }).catch((error) => {
                 console.error('Error fetching user data:', error);
@@ -32,15 +37,13 @@ export default function ProfileForm() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            // Perform the POST request with form data
-            const token = sessionStorage.getItem('token'); // Retrieve JWT Token for authentication
-            const userId = sessionStorage.getItem('userId'); // Retrieve user ID from session storage 
-            const response = await axios.post(`http://localhost:3001/profile/${userId}`, userData, {
+            const token = sessionStorage.getItem('token');
+            const userId = sessionStorage.getItem('userId');
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/profile/${userId}`, userData, {
                 headers: {
-                    Authorization: token // Send the JWT token in the request headers
+                    Authorization: token
                 }
             });
-            // Check if the response contains a success message
             if (response.data.message) {
                 // Handle success
             }

@@ -29,7 +29,9 @@ export default function SignUp() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('https://seatsense.sluhncauldron.org/signup', {
+      const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
+      const response = await axios.post(`${backendUrl}/signup`, {
         firstName: event.target.firstName.value,
         lastName: event.target.lastName.value,
         phone: event.target.phone.value,

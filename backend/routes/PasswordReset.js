@@ -10,7 +10,7 @@ router.post('/:email', async (req, res) => {
         const email = req.params.email; // Extract email from route parameter
 
         // Check if the email exists in the User table
-        const user = await User.findOne({ where: { email } }); 
+        const user = await User.findOne({ where: { email } });
         if (!user) {
             return res.status(404).json({ error: 'Email not found' });
         }
@@ -48,14 +48,18 @@ router.get('/', (req, res) => {
 
 // Function to generate password reset link
 function generateResetLink(email) {
+    // Get the backend URL from environment variables
+    const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
     // Generate unique token or code for password reset link
     const token = generateUniqueToken();
 
-    // Construct password reset link
-    const resetLink = `http://localhost:3001/reset-password?token=${token}&email=${email}`;
+    // Construct password reset link using the backend URL
+    const resetLink = `${backendUrl}/reset-password?token=${token}&email=${email}`;
 
     return resetLink;
 }
+
 
 function generateUniqueToken() {
     return uuidv4();
