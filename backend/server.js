@@ -19,6 +19,7 @@ const dashboardRouter = require('./routes/auth/Dashboard');
 const clientRouter = require('./routes/Client');
 const profileRouter = require('./routes/Profile');
 const passwordRouter = require('./routes/PasswordReset');
+const sensorRouter = require('./routes/SensorData');
 const phoneRouter = require('./routes/PhoneCall');
 const signUpPageRoute = require('./routes/SignUpPage');
 const passwordResetPageRoute = require('./routes/PasswordResetPage');
@@ -33,6 +34,7 @@ app.use("/password-reset", passwordRouter);
 app.use("/phone-call", phoneRouter);
 app.use("/signup-page", signUpPageRoute);
 app.use("/password-reset-page", passwordResetPageRoute);
+app.use("/sensor-data", sensorRouter);
 
 async function createRootUser() {
   try {

@@ -124,7 +124,7 @@ export default function Dashboard() {
             </Typography>
             <Button variant="text" color="inherit" onClick={handleLogout}>Logout</Button>
             <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
+              <Badge color="secondary">
                 <AccountCircleIcon /> 
                </Badge>
             </IconButton>
