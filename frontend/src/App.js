@@ -16,6 +16,7 @@ function App() {
     try {
       // Call the login function from auth.js
       // Pass the email and password to authenticate
+      // Comment
       await login(email, password);
 
       // Redirect to the dashboard page after successful login
