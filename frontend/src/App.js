@@ -1,5 +1,3 @@
-// import axios from "axios";
-// import { useEffect, useState } from "react";
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Dashboard from './components/DashboardPage/dashboard';
@@ -13,14 +11,21 @@ import RootDashboard from './components/RootDashPage/rootDash.js';
 import { login } from './auth/auth.js';
 
 function App() {
-  const handleLogin = async (email, password) => {
+  const handleLogin = async (email, password, navigate) => { // Added navigate as a parameter
     try {
       // Call the login function from auth.js
       // Pass the email and password to authenticate
       await login(email, password);
 
-      // Redirect to the dashboard page after successful login
-      return <Navigate to="/dashboard" />;
+      // Retrieve user role from session storage
+      const role = sessionStorage.getItem('role');
+
+      // Redirect user to appropriate dashboard based on role
+      if (role === 'root') {
+        navigate('/root-dash');
+      } else {
+        navigate('/dashboard');
+      }
     } catch (error) { }
   };
 
@@ -34,7 +39,7 @@ function App() {
         <Route path="/client" element={<Client />} />
         <Route path="/notification" element={<Notification />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/root-dash" element={<RootDashboard />}/>
+        <Route path="/root-dash" element={<RootDashboard />} />
       </Routes>
     </Router>
   );

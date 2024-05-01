@@ -29,7 +29,7 @@ function SignInSide() {
             await auth.login(email, password); // Use the login function
             console.log("successful login");
             const role = sessionStorage.getItem('role');
-            if (role === 'root') {
+            if (role === 'root') { // Compare as a string
                 navigate('/root-dash');
             } else {
                 navigate('/dashboard');
