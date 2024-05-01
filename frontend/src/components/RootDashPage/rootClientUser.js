@@ -75,6 +75,7 @@ export default function RootClientUser() {
                                 labelId="client-label"
                                 id="client-select"
                                 value={selectedClient}
+                                shrink
                                 onChange={handleClientChange}
                             >
                                 {clients.map((client) => (
@@ -90,6 +91,7 @@ export default function RootClientUser() {
                                 labelId="user-label"
                                 id="user-select"
                                 value={selectedUser}
+                                shrink
                                 onChange={handleUserChange}
                             >
                                 {users.map((user) => (
