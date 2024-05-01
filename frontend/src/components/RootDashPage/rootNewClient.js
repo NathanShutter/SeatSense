@@ -78,7 +78,7 @@ export default function RootNewClient() {
                         <TextField
                             required
                             fullWidth
-                            shrink
+                            InputLabelProps={{ shrink: true }}
                             id="seatedDuration"
                             label="Seated Duration"
                             name="seatedDuration"
@@ -91,7 +91,7 @@ export default function RootNewClient() {
                         <TextField
                             required
                             fullWidth
-                            shrink
+                            InputLabelProps={{ shrink: true }}
                             id="seatedThreshold"
                             label="Seated Threshold"
                             name="seatedThreshold"
