@@ -1,15 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const { Client } = require('../models'); 
+const { Client } = require('../models');
 
 // POST /create-client
 router.post('/', async (req, res) => {
     try {
         // Extract client data from request body
-        const { firstName, lastName, phoneNumber, seatedDuration, seatedThreshold } = req.body;
+        let { firstName, lastName, phoneNumber, seatedDuration, seatedThreshold } = req.body;
+
+        // Remove all spaces from the phone number
+        phoneNumber = phoneNumber.replace(/\s/g, '');
 
         // Create a new client instance
-        const newClient = await Client.create({ 
+        const newClient = await Client.create({
             firstName,
             lastName,
             phoneNumber,
