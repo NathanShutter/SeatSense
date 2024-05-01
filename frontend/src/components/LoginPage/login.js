@@ -1,5 +1,3 @@
-// components/LoginPage/login.js
-
 import * as React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -50,7 +48,7 @@ function SignInSide() {
                     sm={4}
                     md={7}
                     sx={{
-                        backgroundImage: 'url(https://private-user-images.githubusercontent.com/44408112/314144460-7fa96d9b-9b2f-48df-b877-20060db59c14.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTQ1MzA3OTcsIm5iZiI6MTcxNDUzMDQ5NywicGF0aCI6Ii80NDQwODExMi8zMTQxNDQ0NjAtN2ZhOTZkOWItOWIyZi00OGRmLWI4NzctMjAwNjBkYjU5YzE0LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA1MDElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNTAxVDAyMjgxN1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTViOGI0Y2ViZjhjNDc1MGRkODFhOGUzNzY1ZmY2NTBjY2U1MTNkYmQ3NmU5M2UwNDgyYTA1MmQyNDkwMzhlMWQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.CgliNWyjfnCr7MWbxfngVBexBokZbxnFYanC1NRt4rY)',
+                        backgroundImage: 'url(/images/Logo.png)',
                         backgroundRepeat: 'no-repeat',
                         backgroundColor: (t) =>
                             t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
