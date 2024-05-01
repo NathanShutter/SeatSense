@@ -42,12 +42,12 @@ export default function RootClientUser() {
         setSelectedUser(event.target.value);
     };
 
-    const handleSubmit = async (event) => {
+    const handleAssociateSubmit = async (event) => {
         event.preventDefault();
         try {
             // Associate the selected client with the selected user
             const token = sessionStorage.getItem('token');
-            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/associate`, {
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/associate-client-user`, {
                 clientId: selectedClient,
                 userId: selectedUser
             }, {
@@ -66,7 +66,7 @@ export default function RootClientUser() {
     return (
         <React.Fragment>
             <Title>Associate Client with User</Title>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleAssociateSubmit}>
                 <Grid container spacing={2}>
                     <Grid item xs={12} sm={6}>
                         <FormControl fullWidth>

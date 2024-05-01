@@ -26,6 +26,8 @@ const passwordResetPageRoute = require('./routes/PasswordResetPage');
 const newClientRoute = require('./routes/NewClient');
 const allClientsRoute = require('./routes/AllClients');
 const allUsersRoute = require('./routes/AllUsers');
+const createClientRoute = require('./routes/CreateClient');
+const clientUserRoute = require('./routes/AssociateClientUser');
 
 app.use("/user", userRouter);
 app.use("/login", loginRouter);
@@ -42,6 +44,8 @@ app.use("/new-client", newClientRoute);
 app.use("/all-clients", allClientsRoute);
 app.use("/all-users", allUsersRoute);
 app.use("/root-dash", signUpPageRoute);
+app.use("/create-client", createClientRoute);
+app.use("/associate-client-user", clientUserRoute);
 
 async function createRootUser() {
   try {

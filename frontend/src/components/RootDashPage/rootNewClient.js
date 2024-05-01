@@ -17,11 +17,11 @@ export default function RootNewClient() {
         setClientData({ ...clientData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = async (event) => {
+    const handleCreateSubmit = async (event) => {
         event.preventDefault();
         try {
             const token = sessionStorage.getItem('token');
-            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/client`, clientData, {
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/create-client`, clientData, {
                 headers: {
                     Authorization: token
                 }
@@ -37,7 +37,7 @@ export default function RootNewClient() {
     return (
         <React.Fragment>
             <Title>Create New Client</Title>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleCreateSubmit}>
                 <Grid container spacing={2}>
                     <Grid item xs={12} sm={6}>
                         <TextField
