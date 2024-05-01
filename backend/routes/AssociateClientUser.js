@@ -3,7 +3,7 @@ const router = express.Router();
 const { User, Client } = require('../models'); // Import Sequelize models
 
 // POST /associate-client-user
-router.post('/associate-client-user', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         // Extract client ID and user ID from request body
         const { clientId, userId } = req.body;

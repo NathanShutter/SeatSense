@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Client = require('../models/Client');
+const { Client } = require('../models'); 
 
 // POST /create-client
 router.post('/', async (req, res) => {
@@ -9,16 +9,13 @@ router.post('/', async (req, res) => {
         const { firstName, lastName, phoneNumber, seatedDuration, seatedThreshold } = req.body;
 
         // Create a new client instance
-        const newClient = new Client({
+        const newClient = await Client.create({ 
             firstName,
             lastName,
             phoneNumber,
             seatedDuration,
             seatedThreshold
         });
-
-        // Save the new client to the database
-        await newClient.save();
 
         // Respond with success message
         res.status(201).json({ message: 'Client created successfully' });
