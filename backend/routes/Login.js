@@ -26,8 +26,8 @@ router.post('/', async (req, res) => {
     // Generate JWT token using the secret key
     const token = jwt.sign({ userId: user.userId }, secretKey, { expiresIn: '1h' });
 
-    // Send token and user role back to client along with user ID
-    res.json({ token, userId: user.userId, userRole: user.role });
+    // Send token and user role back to client along with user ID and role
+    res.json({ token, userId: user.userId, role: user.role });
   } catch (error) {
     console.error('Error during login:', error.message);
     res.status(500).json({ error: 'Internal server error' });

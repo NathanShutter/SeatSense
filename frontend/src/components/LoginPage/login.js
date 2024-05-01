@@ -1,3 +1,5 @@
+// components/LoginPage/login.js
+
 import * as React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -26,7 +28,12 @@ function SignInSide() {
         try {
             await auth.login(email, password); // Use the login function
             console.log("successful login");
-            navigate('/dashboard');
+            const role = sessionStorage.getItem('role');
+            if (role === 'root') {
+                navigate('/root-dash');
+            } else {
+                navigate('/dashboard');
+            }
         } catch (error) {
             console.error('Login failed:', error.message);
             setError('Invalid email or password'); // Set error message
