@@ -41,6 +41,7 @@ app.use("/sensor-data", sensorRouter);
 app.use("/new-client", newClientRoute);
 app.use("/all-clients", allClientsRoute);
 app.use("/all-users", allUsersRoute);
+app.use("/root-dash", signUpPageRoute);
 
 async function createRootUser() {
   try {

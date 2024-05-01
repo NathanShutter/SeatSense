@@ -17,6 +17,7 @@ const login = async (email, password) => {
         const data = await response.json();
         sessionStorage.setItem('token', data.token); // Store token in session storage
         sessionStorage.setItem('userId', data.userId); // Store userId in session storage
+        sessionStorage.setItem('role', data.role) // Store role in session storage
         return data.token;
     } catch (error) {
         console.error('Error:', error.message);
