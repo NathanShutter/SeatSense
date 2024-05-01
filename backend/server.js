@@ -23,6 +23,9 @@ const sensorRouter = require('./routes/SensorData');
 const phoneRouter = require('./routes/PhoneCall');
 const signUpPageRoute = require('./routes/SignUpPage');
 const passwordResetPageRoute = require('./routes/PasswordResetPage');
+const newClientRoute = require('./routes/NewClient');
+const allClientsRoute = require('./routes/AllClients');
+const allUsersRoute = require('./routes/AllUsers');
 
 app.use("/user", userRouter);
 app.use("/login", loginRouter);
@@ -35,6 +38,9 @@ app.use("/phone-call", phoneRouter);
 app.use("/signup-page", signUpPageRoute);
 app.use("/password-reset-page", passwordResetPageRoute);
 app.use("/sensor-data", sensorRouter);
+app.use("/new-client", newClientRoute);
+app.use("/all-clients", allClientsRoute);
+app.use("/all-users", allUsersRoute);
 
 async function createRootUser() {
   try {

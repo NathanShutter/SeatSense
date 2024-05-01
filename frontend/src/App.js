@@ -9,6 +9,7 @@ import Client from './components/ClientPage/client';
 import Notification from "./components/NotificationsPage/notifications.js";
 import Profile from "./components/ProfilePage/profile.js";
 import PasswordReset from "./components/PasswordPage/passwordReset.js";
+import RootDashboard from './components/RootDashPage/rootDash.js';
 import { login } from './auth/auth.js';
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
         <Route path="/client" element={<Client />} />
         <Route path="/notification" element={<Notification />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/root-dash" element={<RootDashboard />}/>
       </Routes>
     </Router>
   );

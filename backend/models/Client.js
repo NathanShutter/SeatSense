@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
     Client.associate = (models) => {
         Client.belongsTo(models.User, { 
             foreignKey: {
-                allowNull: false
+                allowNull: true
             }
         });
         Client.hasMany(models.Notification);
