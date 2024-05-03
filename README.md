@@ -14,7 +14,9 @@
 3. [Installation](#install)
 
 ## Introduction <a name="introduction"></a>
-Introduction text here.
+The purpose of SeatSense is to provide a minimally intrusive experience for patient monitoring. 
+SeatSense monitors readings from a weight sensor and will provide alerts based on a person sitting too long
+or if they missed their check-in time window set by the caregiver.
 
 ## Diagrams <a name="diagrams"></a>
 
