@@ -8,6 +8,7 @@
     - [Context Diagram](#context)
     - [Use Case Diagram](#useCase)
     - [Wireframe Document](#wireframe)
+    - [Poster](#poster)
 3. [Components List](#components)
 4. [Deploy Scripts](#scripts)
 5. [URLs/Domain Hosting](#domain)
@@ -32,6 +33,11 @@ or if they missed their check-in time window set by the caregiver.
 
 ### Wireframe <a name="wireframe"></a>
 [Wireframe](https://docs.google.com/document/d/1z0uEi7CwZw6xhUmhtxexyhhBEGdNLQePkJ5ze49SKhE/edit?usp=drive_link)
+
+### Poster <a name="poster"></a>
+
+![Poster](https://drive.google.com/uc?export=view&id=1y-d4CGcdIHW85WA2PxMFK8ckaz1LPRiI)
+[Poster](https://drive.google.com/file/d/18JTttSs_Cu7IYCbyFV_aXj_Qu5Ku6PAT/view?usp=drive_link)
 
 ## Components List <a name="components"></a>
 [Components](https://docs.google.com/spreadsheets/d/1qV1WKEFyU27Uk_XOlJQLWVyRiMQ0DUOngXsA47FOCYI/edit?usp=drive_link)
