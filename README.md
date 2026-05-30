@@ -237,9 +237,9 @@ npm run dev
 
 | Name | Role |
 |---|---|
-| Nathan Shutter | Frontend development, project architecture |
-| Brogan [Last] | Hardware integration, sensor interface |
-| Jesse [Last] | Backend development, database design |
+| Nathan | Frontend development, project architecture |
+| Brogan | Hardware integration, sensor interface |
+| Jesse | Backend development, database design |
 
 Built as a collaborative capstone-style project in partnership with **St. Luke's University Health Network (SLUHN)**.
 
